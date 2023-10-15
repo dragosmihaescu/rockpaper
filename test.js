@@ -1,31 +1,27 @@
+let computerPoints = 0;
+let playerPoints = 0;
+let result = 0;
 
-function getComputerChoice () {
-    const choices = ["Rock", "Paper", "Scissors"];
-    const choice = choices[Math.floor(Math.random()*Text.length)];
-    alert("The choice is: " + choice)
+   const choices = ['Rock', 'Paper', 'Scissors'];
+   const choice = choices[Math.floor(Math.random() * choices.length)]
+   console.log(choice)
+
+
+
+ function playRound(playerSelection, computerSelection) {
+         if ((playerSelection === computerSelection )) {
+                console.log('Draw')
+         } else if ((playerSelection === 'Rock' && computerSelection === 'Paper') || (playerSelection === 'Scissors' && computerSelection === 'Rock') || (playerSelection === 'Paper' && computerSelection === 'Scissors')) {
+                computerPoints++;
+                console.log('Computer won. He has ' + computerPoints + ' Points')
+         } else {
+                playerPoints++
+                console.log('Player won. You have ' + playerPoints + ' Points')
+   }
 }
-
-
-
-function playRound(playerSelection, computerSelection) {
-    if (computerSelection===playerSelection) {
-        console.log("Draw")
-    } else if (computerSelection==="Paper" && playerSelection === "Scissors"){
-        console.log("Computer lost") 
-    }
-            else if (computerSelection==="Paper" && playerSelection === "Rock") {
-                console.log("Computer won")
-            } else if (computerSelection==="Scissors" && playerSelection === "Rock") {
-                console.log("Computer lost")
-            } else if (computerSelection==="Scissors" && playerSelection === "Paper") {
-                console.log("Computer won")
-            } else if (computerSelection==="Rock" && playerSelection === "Scissors") {
-                console.log("Computer won") 
-            } else if (computerSelection==="Rock" && playerSelection === "Paper") {
-                console.log("Computer lost")
-            }
-        }
-        const playerSelection = prompt("Rock, Paper or Scissors?")
-        const computerSelection  = getComputerChoice()
-       
-   console.log(playRound(playerSelection,computerSelection))
+        
+        const playerSelection = prompt('Rock, Paper or Scissors?')
+        const computerSelection  = choice
+        console.log(playRound(playerSelection, computerSelection))
+        
+   
